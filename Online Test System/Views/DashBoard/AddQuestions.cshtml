@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Questions";
+}
+
+<h2>Add Question For Test</h2>
+@using (Html.BeginForm("AddQuestions", "DashBoard", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+<form id="AddQuestion">
+    <label>Question:</label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <textarea id="Question" name="Question"></textarea>
+    <br>
+    <br>
+    <label>Answer1:</label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" id="Answer1" name="Answer1">
+    <br>
+    <br>
+    <label>Answer2:</label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" id="Answer2" name="Answer2">
+    <br>
+    <br>
+    <label>Answer3:</label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" id="Answer3" name="Answer3">
+    <br>
+    <br>
+    <label>Answer4:</label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" id="Answer4" name="Answer4">
+    <br>
+    <br>
+    <label>Correct Answer:</label>&nbsp;&nbsp; <b>Answer1</b>
+    <input type="radio" id="CorrectAnswer" value="1" name="CorrectAnswer">
+    <b>Answer2</b>
+    <input type="radio" id="CorrectAnswer" value="2" name="CorrectAnswer">
+    <b>Answer3</b>
+    <input type="radio" id="CorrectAnswer" value="3" name="CorrectAnswer">
+    <b>Answer4</b>
+    <input type="radio" id="CorrectAnswer" value="4" name="CorrectAnswer">
+    <br>
+    <br>
+    <button class="btn btn-primary btn-lg btn-block">Add</button>
+</form>
+}

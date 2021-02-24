@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Online_Test_System.Models.DashboardModel.TestResult>
+@{
+    ViewBag.Title = "TestResult";
+}
+<h2>TestResult</h2>
+<button type="button" class="btn btn-info" onclick="location.href='@Url.Action("ExportExcel", "DashBoard")'">Export To Excel</button>
+<br />
+<br />
+<table class="table" border="1" id="DataTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalQuestions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestScore)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.StudentName
+                </td>
+                <td>
+                    @item.TotalQuestions
+                </td>
+                <td>
+                    @item.TestScore
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

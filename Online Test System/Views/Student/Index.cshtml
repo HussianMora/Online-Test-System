@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Online_Test_System.Models.DashboardModel.QuestionModel>
+@{
+    ViewBag.Title = "Student Portal";
+    int questiono = 1;
+    <style>
+        label {
+            font-weight: normal;
+        }
+    </style>
+}
+<h2>Welcome to Test</h2>
+<input type="hidden" id="hdnTotalQuestions" value="@Model.Count()">
+@foreach (var item in Model)
+{
+    <div class="question">
+        <p class="question">@questiono)<b>@item.Question</b>?</p>
+        @*<ul class="answers">*@
+        <input type="radio" name="@item.Question_Id" value="1" id="@item.Question_Id">
+        <label for="option1">@item.Answer1</label>
+        <br />
+        <input type="radio" name="@item.Question_Id" value="2" id="@item.Question_Id">
+        <label for="option2">@item.Answer2</label>
+        <br />
+        <input type="radio" name="@item.Question_Id" value="3" id="@item.Question_Id">
+        <label for="option3">@item.Answer3</label>
+        <br />
+        <input type="radio" name="@item.Question_Id" value="4" id="@item.Question_Id">
+        <label for="option4">@item.Answer4</label>
+        <input type="hidden" name="hdnCorrectAnswer" value="@item.CorrectAnswer" id="CorrectAnswer_@item.Question_Id">
+        <br />
+        @*</ul>*@
+    </div>
+    questiono = questiono + 1;
+
+}
+<div>
+    <input type="button" class="col-md-1" onclick="saveStudentScore()" value="Submit" />
+</div>
+<script src="~/Scripts/Student/Student.js"></script>
+
